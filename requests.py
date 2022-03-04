@@ -1,10 +1,10 @@
 import requests, os
 
-password = os.getenv('light_pass')
-user = os.getenv('light_user')
-url = os.getenv('obs_url')
+password = os.getenv('LIGHT_PASS')
+user = os.getenv('LIGHT_USER')
+url = os.getenv('OBSV_URL')
 
-url = 'https://'+user+':'+password+'@'+url+'/api/alerting/rules/_find?search_fields=name'
+url = f'https://{user}:{password}@{url}/api/alerting/rules/_find?search_fields=name'
 
 
 resp = requests.get(url=url)
